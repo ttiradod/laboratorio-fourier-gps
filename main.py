@@ -34,3 +34,29 @@ dibujar_velocidad(
     velocidad,
     "Velocidad GPS"
 )
+
+
+# FASE 2: SELECCIONAR TRAMO
+
+from tramos import pedir_tramo, recortar_tramo, ajustar_tramo_por_umbral
+
+inicio, fin = pedir_tramo()
+
+tiempo_tramo, velocidad_tramo = recortar_tramo(
+    tiempo,
+    velocidad,
+    inicio,
+    fin
+)
+
+tiempo_tramo, velocidad_tramo = ajustar_tramo_por_umbral(
+    tiempo_tramo,
+    velocidad_tramo,
+    umbral=0.5
+)
+
+dibujar_velocidad(
+    tiempo_tramo,
+    velocidad_tramo,
+    "Tramo ajustado"
+)
