@@ -1,0 +1,10 @@
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+
+# Gráficas generadas
+Figure_*.png
+
+
+# Datos reales de entrenamientos
+DATA*.CSV
