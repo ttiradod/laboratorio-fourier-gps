@@ -60,3 +60,15 @@ dibujar_velocidad(
     velocidad_tramo,
     "Tramo ajustado"
 )
+
+# FASE 2.5: Ver los numeros reales que hay detrás de la gráfica >> verdatos.py
+
+from verdatos import mostrar_info_tramo, mostrar_primeras_muestras, guardar_valores_tramo
+
+mostrar_info_tramo(tiempo_tramo, velocidad_tramo)
+
+mostrar_primeras_muestras(
+    tiempo_tramo,
+    velocidad_tramo,
+    cantidad=20
+)
