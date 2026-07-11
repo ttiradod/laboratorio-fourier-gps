@@ -126,3 +126,17 @@ dibujar_velocidad(
     senal_preparada,
     "Señal preparada con ventana Hanning"
 )
+
+
+# FASE 4: calcular la frecuencia de muestreo real
+
+# Fourier necesita saber cada cuánto tiempo están separadas las muestras.
+from muestreo import calcular_frecuencia_muestreo
+
+frecuencia_muestreo, dt_medio = calcular_frecuencia_muestreo(tiempo_tramo)
+
+print()
+print("FASE 4: FRECUENCIA DE MUESTREO")
+print("------------------------------")
+print("Tiempo medio entre muestras:", dt_medio, "s")
+print("Frecuencia de muestreo:", frecuencia_muestreo, "Hz")
