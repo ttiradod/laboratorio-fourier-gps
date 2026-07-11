@@ -78,7 +78,7 @@ mostrar_primeras_muestras(
 
 # Fase 3.1  quitar media
 
-from preprocesado import quitar_media, quitar_tendencia
+from preprocesado import quitar_media, quitar_tendencia, aplicar_ventana_hanning
 
 velocidad_sin_media, media_velocidad = quitar_media(velocidad_tramo)
 
@@ -112,4 +112,17 @@ dibujar_velocidad(
     tiempo_tramo,
     velocidad_sin_tendencia,
     "Velocidad sin tendencia lenta"
+)
+
+
+# Fase 3.3 aplicar ventana Hanning
+
+senal_preparada, ventana = aplicar_ventana_hanning(
+    velocidad_sin_tendencia
+)
+
+dibujar_velocidad(
+    tiempo_tramo,
+    senal_preparada,
+    "Señal preparada con ventana Hanning"
 )

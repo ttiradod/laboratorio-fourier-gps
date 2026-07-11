@@ -23,3 +23,18 @@ def quitar_tendencia(tiempo, senal):
     senal_sin_tendencia = senal - tendencia # resta esa recta a la señal.
 
     return senal_sin_tendencia, tendencia
+
+
+
+
+# Aplicar ventana Hanning
+# Cuando recortamos un tramo, la señal empieza y termina de golpe.
+# Fourier puede interpretar esos cortes bruscos como frecuencias que no pertenecen realmente al movimiento, sino al propio recorte.
+# La ventana Hanning suaviza el inicio y el final de la señal para reducir ese efecto y preparar mejor los datos antes de calcular Fourier.
+
+def aplicar_ventana_hanning(senal):
+    ventana = np.hanning(len(senal))
+
+    senal_con_ventana = senal * ventana
+
+    return senal_con_ventana, ventana
