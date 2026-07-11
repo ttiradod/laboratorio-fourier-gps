@@ -72,3 +72,30 @@ mostrar_primeras_muestras(
     velocidad_tramo,
     cantidad=20
 )
+
+# FASE 3: FOURIER
+# 
+# 
+# 1 - QUITAR LA MEDIA DE LA SEÑAL
+from preprocesado import quitar_media
+
+velocidad_sin_media, media_velocidad = quitar_media(velocidad_tramo)
+
+print()
+print("FASE 3: QUITAR LA MEDIA")
+print("-----------------------")
+print("Media de velocidad:", media_velocidad, "m/s")
+
+dibujar_velocidad(
+    tiempo_tramo,
+    velocidad_sin_media,
+    "Velocidad sin media"
+)
+
+
+guardar_valores_tramo(
+    "valores_tramo.txt",
+    tiempo_tramo,
+    velocidad_tramo,
+    velocidad_sin_media
+)
