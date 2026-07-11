@@ -73,11 +73,12 @@ mostrar_primeras_muestras(
     cantidad=20
 )
 
-# FASE 3: FOURIER
-# 
-# 
-# 1 - QUITAR LA MEDIA DE LA SEÑAL
-from preprocesado import quitar_media
+# FASE 3: PREPARAR LA SEÑAL PARA FOURIER
+ 
+
+# Fase 3.1  quitar media
+
+from preprocesado import quitar_media, quitar_tendencia
 
 velocidad_sin_media, media_velocidad = quitar_media(velocidad_tramo)
 
@@ -98,4 +99,17 @@ guardar_valores_tramo(
     tiempo_tramo,
     velocidad_tramo,
     velocidad_sin_media
+)
+
+# Fase 3.2 quitar tendencia lenta
+
+velocidad_sin_tendencia, tendencia = quitar_tendencia(
+    tiempo_tramo,
+    velocidad_sin_media
+)
+
+dibujar_velocidad(
+    tiempo_tramo,
+    velocidad_sin_tendencia,
+    "Velocidad sin tendencia lenta"
 )
