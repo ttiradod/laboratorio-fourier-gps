@@ -21,3 +21,23 @@ def calcular_espectro_fourier(senal, frecuencia_muestreo):
     magnitudes = np.abs(transformada) # puntuación de cada frecuencia
 
     return frecuencias, magnitudes
+
+
+# Buscamos la frecuencia dominante dentro de un rango lógico.
+# No buscamos el máximo de todo el espectro porque cerca de 0 Hz pueden aparecer cambios muy lentos de la señal que no representan pasos.
+# Para caminar usamos, por ejemplo, un rango entre 0.7 Hz y 2.5 Hz.
+# La frecuencia con mayor magnitud dentro de ese rango será la frecuencia dominante.
+
+def buscar_frecuencia_dominante(frecuencias, magnitudes, frecuencia_min, frecuencia_max):
+    zona_interes = (frecuencias >= frecuencia_min) & (frecuencias <= frecuencia_max)
+    # Crea una máscara: de todas las frecuencias del espectro, se queda solo con las que están entre: frecuencia_min y frecuencia_max
+    frecuencias_zona = frecuencias[zona_interes]
+    magnitudes_zona = magnitudes[zona_interes]
+
+    indice_maximo = np.argmax(magnitudes_zona) # ¿Dónde está el pico más alto dentro de la zona de pasos?
+
+    frecuencia_dominante = frecuencias_zona[indice_maximo]
+    magnitud_dominante = magnitudes_zona[indice_maximo]
+    # la frecuencia ganadora y la magnitud de esa frecuencia
+
+    return frecuencia_dominante, magnitud_dominante

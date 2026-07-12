@@ -141,10 +141,12 @@ print("------------------------------")
 print("Tiempo medio entre muestras:", dt_medio, "s")
 print("Frecuencia de muestreo:", frecuencia_muestreo, "Hz")
 
+# FASE 5: FOURIER GLOBAL
+
+from fourier import calcular_espectro_fourier, buscar_frecuencia_dominante
 
 # FASE 5.1: CALCULAR FOURIER Y DIBUJAR EL ESPECTRO --> ¿Qué frecuencias aparecen dentro de mi señal preparada?
 
-from fourier import calcular_espectro_fourier
 
 frecuencias, magnitudes = calcular_espectro_fourier(
     senal_preparada,
@@ -156,3 +158,20 @@ dibujar_espectro(
     magnitudes,
     "Espectro de frecuencias"
 )
+
+# FASE 5.2: BUSCAR FRECUENCIA DOMINANTE --> Dentro del rango lógico de pasos, ¿qué frecuencia tiene la mayor magnitud?
+
+# FASE 5.2: BUSCAR FRECUENCIA DOMINANTE
+
+frecuencia_dominante, magnitud_dominante = buscar_frecuencia_dominante(
+    frecuencias,
+    magnitudes,
+    frecuencia_min=0.7,
+    frecuencia_max=2.5
+)
+
+print()
+print("FASE 5.2: FRECUENCIA DOMINANTE")
+print("------------------------------")
+print("Frecuencia dominante:", frecuencia_dominante, "Hz")
+print("Magnitud dominante:", magnitud_dominante)
