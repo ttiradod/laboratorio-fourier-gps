@@ -1,5 +1,5 @@
 from lector_csv import buscar_archivos_csv, cargar_csv
-from graficas import dibujar_velocidad
+from graficas import dibujar_velocidad, dibujar_espectro
 
 
 archivos_csv = buscar_archivos_csv()
@@ -140,3 +140,19 @@ print("FASE 4: FRECUENCIA DE MUESTREO")
 print("------------------------------")
 print("Tiempo medio entre muestras:", dt_medio, "s")
 print("Frecuencia de muestreo:", frecuencia_muestreo, "Hz")
+
+
+# FASE 5.1: CALCULAR FOURIER Y DIBUJAR EL ESPECTRO --> ¿Qué frecuencias aparecen dentro de mi señal preparada?
+
+from fourier import calcular_espectro_fourier
+
+frecuencias, magnitudes = calcular_espectro_fourier(
+    senal_preparada,
+    frecuencia_muestreo
+)
+
+dibujar_espectro(
+    frecuencias,
+    magnitudes,
+    "Espectro de frecuencias"
+)

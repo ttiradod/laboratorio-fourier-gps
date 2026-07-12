@@ -17,3 +17,17 @@ def dibujar_velocidad(tiempo, velocidad, titulo):
     plt.grid(True)
 
     plt.show()
+
+def dibujar_espectro(frecuencias, magnitudes, titulo):
+    plt.figure(figsize=(15, 8))
+
+    plt.plot(frecuencias, magnitudes)
+
+    plt.xlabel("Frecuencia (Hz)")
+    plt.ylabel("Magnitud")
+    plt.title(titulo)
+    plt.grid(True)
+
+    plt.xlim(0, 4) # frecuencias razonables para pasos
+
+    plt.show()
