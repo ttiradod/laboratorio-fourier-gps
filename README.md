@@ -6,27 +6,7 @@ La idea principal es tratar la velocidad GPS como una señal discreta en el tiem
 
 
 
-CSV GPS
-↓
-velocidad GPS
-↓
-selección de tramo
-↓
-quitar media
-↓
-quitar tendencia lenta
-↓
-ventana Hanning
-↓
-calcular frecuencia de muestreo
-↓
-FFT
-↓
-frecuencia dominante
-↓
-cadencia en pasos/min
-↓
-pasos estimados del tramo
+CSV GPS --> velocidad GPS --> selección de tramo --> quitar media --> quitar tendencia lenta --> ventana Hanning --> calcular frecuencia de muestreo --> FFT --> frecuencia dominante --> cadencia en pasos/min --> pasos estimados del tramo
 
 
 ## Aclaración importante
