@@ -177,7 +177,7 @@ print("Magnitud dominante:", magnitud_dominante)
 
 # FASE 6: CONVERTIR FRECUENCIA DOMINANTE A PASOS/MIN
 
-from cadencia import frecuencia_a_cadencia_minuto
+from cadencia import frecuencia_a_cadencia_minuto, estimar_repeticiones_tramo
 
 cadencia_pasos_min = frecuencia_a_cadencia_minuto(
     frecuencia_dominante
@@ -187,3 +187,18 @@ print()
 print("FASE 6: CADENCIA ESTIMADA")
 print("-------------------------")
 print("Cadencia estimada:", cadencia_pasos_min, "pasos/min")
+
+# FASE 7: ESTIMAR NÚMERO DE PASOS EN EL TRAMO
+
+duracion_tramo = tiempo_tramo.iloc[-1] - tiempo_tramo.iloc[0]
+
+pasos_estimados = estimar_repeticiones_tramo(
+    frecuencia_dominante,
+    duracion_tramo
+)
+
+print()
+print("FASE 7: PASOS ESTIMADOS")
+print("-----------------------")
+print("Duración del tramo:", duracion_tramo, "s")
+print("Pasos estimados:", pasos_estimados)
