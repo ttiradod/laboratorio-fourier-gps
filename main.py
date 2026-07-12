@@ -161,8 +161,6 @@ dibujar_espectro(
 
 # FASE 5.2: BUSCAR FRECUENCIA DOMINANTE --> Dentro del rango lógico de pasos, ¿qué frecuencia tiene la mayor magnitud?
 
-# FASE 5.2: BUSCAR FRECUENCIA DOMINANTE
-
 frecuencia_dominante, magnitud_dominante = buscar_frecuencia_dominante(
     frecuencias,
     magnitudes,
@@ -175,3 +173,17 @@ print("FASE 5.2: FRECUENCIA DOMINANTE")
 print("------------------------------")
 print("Frecuencia dominante:", frecuencia_dominante, "Hz")
 print("Magnitud dominante:", magnitud_dominante)
+
+
+# FASE 6: CONVERTIR FRECUENCIA DOMINANTE A PASOS/MIN
+
+from cadencia import frecuencia_a_cadencia_minuto
+
+cadencia_pasos_min = frecuencia_a_cadencia_minuto(
+    frecuencia_dominante
+)
+
+print()
+print("FASE 6: CADENCIA ESTIMADA")
+print("-------------------------")
+print("Cadencia estimada:", cadencia_pasos_min, "pasos/min")
