@@ -16,3 +16,11 @@ Este análisis calcula una frecuencia dominante del tramo completo. Por tanto, l
 No representa todavía una cadencia instantánea segundo a segundo.
 
 
+## Validación con Garmin
+
+Se realizó una validación inicial comparando el algoritmo con dos pruebas registradas con Garmin.
+
+La documentación completa está disponible en:
+
+[Validación inicial con Garmin](docs/validacion_garmin.md)
+
