@@ -114,6 +114,37 @@ dibujar_velocidad(
     "Velocidad sin tendencia lenta"
 )
 
+# FASE 8: CREAR VENTANAS DE TIEMPO
+
+from ventanas import crear_ventanas
+
+duracion_ventana = 4
+salto_ventana = 1
+
+ventanas = crear_ventanas(
+    tiempo_tramo,
+    velocidad_sin_tendencia,
+    duracion_ventana,
+    salto_ventana
+)
+
+print()
+print("FASE 8: FOURIER POR VENTANAS")
+print("----------------------------")
+print("Duración de cada ventana:", duracion_ventana, "s")
+print("Salto entre ventanas:", salto_ventana, "s")
+print("Número de ventanas creadas:", len(ventanas))
+
+print()
+print("Primeras ventanas:")
+for ventana in ventanas[:5]:
+    print(
+        "Inicio:", ventana["inicio"],
+        "Fin:", ventana["fin"],
+        "Tiempo central:", ventana["tiempo_central"],
+        "Muestras:", len(ventana["senal"])
+    )
+
 
 # Fase 3.3 aplicar ventana Hanning
 
