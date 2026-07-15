@@ -172,6 +172,43 @@ print("------------------------------")
 print("Tiempo medio entre muestras:", dt_medio, "s")
 print("Frecuencia de muestreo:", frecuencia_muestreo, "Hz")
 
+# FASE 8.2: APLICAR FOURIER A CADA VENTANA
+
+from fourier_ventanas import analizar_ventanas_fourier
+
+frecuencia_min_pasos = 0.7
+frecuencia_max_pasos = 2.5
+
+resultados_ventanas = analizar_ventanas_fourier(
+    ventanas,
+    frecuencia_muestreo,
+    frecuencia_min_pasos,
+    frecuencia_max_pasos
+)
+
+print()
+print("FASE 8.2: RESULTADOS FOURIER POR VENTANAS")
+print("-----------------------------------------")
+print("Rango de búsqueda:", frecuencia_min_pasos, "-", frecuencia_max_pasos, "Hz")
+print("Número de resultados:", len(resultados_ventanas))
+
+print()
+print("Primeros resultados:")
+for resultado in resultados_ventanas[:10]:
+    print(
+        "Ventana:",
+        resultado["inicio"],
+        "-",
+        resultado["fin"],
+        "s | Tiempo central:",
+        resultado["tiempo_central"],
+        "s | Frecuencia:",
+        resultado["frecuencia_dominante"],
+        "Hz | Cadencia:",
+        resultado["cadencia"],
+        "pasos/min"
+    )
+
 # FASE 5: FOURIER GLOBAL
 
 from fourier import calcular_espectro_fourier, buscar_frecuencia_dominante
