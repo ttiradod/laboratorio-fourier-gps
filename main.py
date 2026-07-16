@@ -118,7 +118,7 @@ dibujar_velocidad(
 
 from ventanas import crear_ventanas
 
-duracion_ventana = 4
+duracion_ventana = 8
 salto_ventana = 1
 
 ventanas = crear_ventanas(
@@ -176,7 +176,7 @@ print("Frecuencia de muestreo:", frecuencia_muestreo, "Hz")
 
 from fourier_ventanas import analizar_ventanas_fourier
 
-frecuencia_min_pasos = 0.7
+frecuencia_min_pasos = 1.3
 frecuencia_max_pasos = 2.5
 
 resultados_ventanas = analizar_ventanas_fourier(
@@ -208,6 +208,15 @@ for resultado in resultados_ventanas[:10]:
         resultado["cadencia"],
         "pasos/min"
     )
+
+    # FASE 8.3: GRÁFICA INTERACTIVA DE CADENCIA
+
+from graficas_interactivas import dibujar_cadencia_interactiva
+
+dibujar_cadencia_interactiva(
+    resultados_ventanas,
+    "cadencia_ventanas.html"
+)
 
 # FASE 5: FOURIER GLOBAL
 
