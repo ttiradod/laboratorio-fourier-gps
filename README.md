@@ -24,3 +24,13 @@ La documentación completa está disponible en:
 
 [Validación inicial con Garmin](docs/validacion_garmin.md)
 
+## Fourier por ventanas
+
+La segunda fase del proyecto aplica Fourier en ventanas temporales para estudiar cómo cambia la cadencia estimada a lo largo del tramo.
+
+Esta fase permite detectar zonas donde la frecuencia dominante es estable y zonas donde la señal GPS no representa bien la cadencia.
+
+La documentación completa está disponible en:
+
+[Fourier por ventanas](docs/fourier_por_ventanas.md)
+
